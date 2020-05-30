@@ -87,12 +87,14 @@ public class MainActivity extends AppCompatActivity {
                     String weather = jObject.getString("description");
 
                     if(!weather.equals("")) {
+                        weatherInfoTextView.setVisibility(View.VISIBLE);
                         weatherInfoTextView.setText(weather);
                     }
 
                 }
 
             } catch (Exception e) {
+                weatherInfoTextView.setVisibility(View.INVISIBLE);
                 Toast.makeText(getApplicationContext(), "Could not find the place", Toast.LENGTH_SHORT).show();
                 e.printStackTrace();
             }
